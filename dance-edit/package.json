@@ -1,0 +1,21 @@
+{
+  "name": "dance-edit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Party dance reel edit: beat-synced transitions, looks and animated flyers",
+  "scripts": {
+    "studio": "npx remotion studio",
+    "render": "npx remotion render src/index.ts Dance out/dance-edit.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "@remotion/transitions": "4.0.539",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.6.3"
+  }
+}
