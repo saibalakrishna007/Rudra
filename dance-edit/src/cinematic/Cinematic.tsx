@@ -203,7 +203,9 @@ const Credits: React.FC<{f: number}> = ({f}) => {
 };
 
 export const Cinematic: React.FC = () => {
-	const f = useCurrentFrame();
+	// Frame 0 is the Reels/Shorts cover, so it shows the finished title card instead of black.
+	const raw = useCurrentFrame();
+	const f = raw === 0 ? 60 : raw;
 	const fade = interpolate(f, [FOOT_START - 15, FOOT_START + 10], [0, 1], clamp);
 	const bars = interpolate(f, [10, FOOT_START], [0, BAR], {...clamp, easing: Easing.inOut(Easing.cubic)});
 
