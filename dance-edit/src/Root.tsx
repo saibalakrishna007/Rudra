@@ -5,6 +5,7 @@ import {clockWipe} from '@remotion/transitions/clock-wipe';
 import {Main, MAIN_FRAMES} from './Main';
 import {Intro, Outro, Replay, REPLAY_FRAMES} from './Bookends';
 import {tapeGlitch, zoomThrough} from './transitions';
+import {Cinematic, CINEMATIC_FRAMES} from './cinematic/Cinematic';
 
 const INTRO = 75;
 const OUTRO = 105;
@@ -33,4 +34,9 @@ const Dance: React.FC = () => (
 	</TransitionSeries>
 );
 
-export const RemotionRoot: React.FC = () => <Composition id="Dance" component={Dance} durationInFrames={TOTAL} fps={30} width={1080} height={1920} />;
+export const RemotionRoot: React.FC = () => (
+	<>
+		<Composition id="Dance" component={Dance} durationInFrames={TOTAL} fps={30} width={1080} height={1920} />
+		<Composition id="Cinematic" component={Cinematic} durationInFrames={CINEMATIC_FRAMES} fps={30} width={1080} height={1920} />
+	</>
+);
